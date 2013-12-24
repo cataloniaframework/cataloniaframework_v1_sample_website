@@ -1,0 +1,21 @@
+ataloniaWeb Changelog
+======================
+
+2012-12-23
+Carles Mateo:
+Fixed a NOTICE when there was no HTTP_REFERER
+
+New method Requests::getHttpReferer
+
+2013-12-22
+Carles Mateo:
+Changed CSS for links on site-nav Menu
+
+Updated from Core Framework: Added support for right bar at getSectionUrl
+
+Added section Download, Manual
+
+Changed title from the app
+
+Added default parameters to Actions: $s_url = '', $st_params = Array(), $st_params_url = Array(), $o_db = null
+
