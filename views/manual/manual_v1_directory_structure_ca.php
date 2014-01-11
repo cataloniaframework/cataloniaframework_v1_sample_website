@@ -78,7 +78,7 @@ Custom changes in your development go to commonrequests.class.php</pre>
 </li>
 </ul>
 <br />
-<a href="<?php echo $s_manual_prefix; ?>">Back to Main Manual page</a><br />
+<a href="<?php echo $s_manual_prefix; ?>">Tornar a la plana principal del Manual</a><br />
 
 </div>
 <?php require VIEWS_ROOT.'index_footer.php'; ?>

@@ -71,15 +71,15 @@ try {
 } catch (DatabaseConnectionError $e) {
     // Todo: Check if in Json...
     // Error with Databases
-    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$s_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
 } catch (CustomFileNotFound $e) {
-    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$s_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
 } catch (CustomFileNotDefined $e) {
-    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$s_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
 } catch (CurrencyNotFoundException $e) {
-    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$s_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
 } catch (exception $e) {
-    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$s_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
 }
 
 // Echo page or error

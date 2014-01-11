@@ -1,11 +1,14 @@
 <?php
+
 /**
- * User:        carles
- * Date:        07/02/13
- * Time:        12:51
- * Filename:    index.php
- * Description:
+ * Creator:      Carles Mateo
+ * Date Created: 2013-02-07 12:51
+ * Last Updater: Carles Mateo
+ * Last Updated: 2013-12-29 22:30
+ * Filename:     index.php
+ * Description:  Small index.php that do all the jobs and catch the Exceptions
  */
+
 
 use CataloniaFramework\Views as Views;
 use CataloniaFramework\Core as Core;
@@ -16,16 +19,6 @@ try {
 
     require_once '../catfwcore/bootstrap.php';
     require_once CUSTOM_INIT_ROOT.'bootstrap.php';
-
-    // TODO: Detect Ip from Proxy
-    $s_visitor_ip   = $_SERVER['REMOTE_ADDR'];
-
-    $s_referer      = \CataloniaFramework\Requests::getHttpReferer();
-    $st_results = $o_db->queryWrite('INSERT INTO
-                                                `visits`
-                                                (`s_visit_datetime`, `s_visit_ip`, `s_referer`)
-                                     VALUES
-                                                (NOW(), \''.$s_visitor_ip.'\', \''.$s_referer.'\');');
 
     if (Navigation::isURLCustom(REQUESTED_PATH)) {
         // custom url
@@ -42,22 +35,32 @@ try {
     Views::addSystemVar('EXECUTION_TIME', $i_execution_time, Views::VAR_ACTION_REPLACE);
     // TODO: SetSystemvar finish time
     Views::replaceSystemVars($s_html);
-    echo $s_html;
+
+    // Send headers
+    $o_controller->sendHeaders();
+
 } catch (DatabaseConnectionError $e) {
     // Todo: Check if in Json...
     // Error with Databases
-    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$s_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
-    echo $s_html;
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
+} catch (DatabaseUnableToSelectDb $e) {
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
+} catch (DatabaseUnableToSetCharset $e) {
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
+} catch (CustomClassNotFound $e) {
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
 } catch (CustomFileNotFound $e) {
-    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$s_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
-    echo $s_html;
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
 } catch (CustomFileNotDefined $e) {
-    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$s_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
-    echo $s_html;
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
+} catch (CurrencyNotFoundException $e) {
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
 } catch (exception $e) {
-    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$s_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
-    echo $s_html;
+    $s_html = getErrorView(Views::ERROR_EXCEPTION_ERROR, Views::$st_ERROR_MESSAGES[Views::ERROR_EXCEPTION_ERROR].' '.$e->getMessage());
 }
+
+// Echo page or error
+echo $s_html;
 
 Core::end();
 

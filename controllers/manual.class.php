@@ -21,7 +21,7 @@ class Manual extends ControllerBase {
     public function actionIndex($s_url = '', $st_params = Array(), $st_params_url = Array(), $o_db = null) {
 
         // Load multi-language
-        Translations::loadTranslations('about', USER_LANGUAGE);
+        Translations::loadTranslations('manual', USER_LANGUAGE);
 
         $st_parameters = Array();
 
@@ -29,12 +29,18 @@ class Manual extends ControllerBase {
 
         $st_parameters['s_error_msg'] = $s_error_msg;
 
-        if (isset($st_params[1]) && isset($st_params[2]) && $st_params[1] == 'v1' && $st_params[2] == 'getting_started') {
+        if (isset($st_params[1]) && isset($st_params[2]) && $st_params[1] == 'v1' && $st_params[2] == t('seo_section_requirements')) {
+            $s_view = $this->getView('manual/manual_v1_requirements', $st_parameters, USER_LANGUAGE);
+        } elseif (isset($st_params[1]) && isset($st_params[2]) && $st_params[1] == 'v1' && $st_params[2] == 'getting_started') {
             $s_view = $this->getView('manual/manual_v1_getting_started', $st_parameters, USER_LANGUAGE);
         } elseif (isset($st_params[1]) && isset($st_params[2]) && $st_params[1] == 'v1' && $st_params[2] == 'directory_structure') {
             $s_view = $this->getView('manual/manual_v1_directory_structure', $st_parameters, USER_LANGUAGE);
         } elseif (isset($st_params[1]) && isset($st_params[2]) && $st_params[1] == 'v1' && $st_params[2] == 'bootstrap') {
             $s_view = $this->getView('manual/manual_v1_bootstrap', $st_parameters, USER_LANGUAGE);
+        } elseif (isset($st_params[1]) && isset($st_params[2]) && $st_params[1] == 'v1' && $st_params[2] == t('seo_section_url_mechanics')) {
+            $s_view = $this->getView('manual/manual_v1_url_mechanics', $st_parameters, USER_LANGUAGE);
+        } elseif (isset($st_params[1]) && isset($st_params[2]) && $st_params[1] == 'v1' && $st_params[2] == t('seo_section_cqlsi')) {
+            $s_view = $this->getView('manual/manual_v1_db_cassandra_cqlsi', $st_parameters, USER_LANGUAGE);
         } else {
             $s_view = $this->getView('manual_index', $st_parameters, USER_LANGUAGE);
         }

@@ -26,6 +26,11 @@ $st_server_config = array(  'environment' 	=> ENVIRONMENT,
 												 		'tmp'               => '/tmp/',
 												 		'logs'              => '/var/logs/www/'
 												 	),
+                            'node'          => array(   'name'              => 'WEB01',
+                                                        'setcookie'         => true,
+                                                        'ttl_cookie'        => 0,
+                                                        'cookie_name'       => 'BALANCER_ID',
+                                                        'cookie_value'      => 'WEB01')
                             );
 
 // Languages Supported

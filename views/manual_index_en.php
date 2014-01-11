@@ -28,13 +28,17 @@ $s_manual_prefix = Section::getSectionURL('manual', true);
 </div>
 ||*||[HEAD_NAVIGATION_BLOCK]||*||
 <div class="body_page">
-<p>Documentation for the Framework</p>
+<h2>Documentation for the Framework</h2>
+The Framework provides a lot of documentation in form of remarks in the code.<br />
+<br />
+<a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_requirements'); ?>">Requirements</a><br />
 <a href="<?php echo Section::getSectionURL('download', true); ?>">Download the Framework</a><br />
 <a href="<?php echo Section::getSectionURL('install', true); ?>">Installation</a><br />
 <a href="<?php echo $s_manual_prefix; ?>v1/getting_started">Getting started</a><br />
 <a href="<?php echo $s_manual_prefix; ?>v1/directory_structure">Directory structure</a><br />
 <a href="<?php echo $s_manual_prefix; ?>v1/bootstrap">Bootstrap and loading order</a><br />
-Url mechanics<br />
+<a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_url_mechanics'); ?>">Url mechanics</a><br />
+<a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_cqlsi'); ?>">Cassandra CQLSÍ</a><br />
 <br />
 </div>
 <?php require 'index_footer.php'; ?>

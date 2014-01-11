@@ -3,10 +3,10 @@
     /**
      * Creator:      Carles Mateo
      * Date Created: 2013-02-20 11:22
-     * Last Updater:
-     * Last Updated:
+     * Last Updater: Carles Mateo
+     * Last Updated: 2014-01-07 13:31
      * Filename:     commonuservars.class.php
-     * Description:
+     * Description:  Space for the custom developments
      */
 
 namespace CataloniaFramework;
@@ -45,11 +45,13 @@ abstract class CommonRequests
 
         $o_menu_navigation = new Menu();
         $o_menu_navigation->addMenuItemFromSection('index', 'Home', t('Home'));
-        $o_menu_navigation->addMenuItemFromSection('about', 'About', t('About us'));
         $o_menu_navigation->addMenuItemFromSection('download', 'Download', t('Download'));
         $o_menu_navigation->addMenuItemFromSection('install', 'Install', t('Install'));
         $o_menu_navigation->addMenuItemFromSection('manual', 'Manual', t('Manual'));
-        //$o_menu_navigation->addMenuItemFromSection('contact', 'Contact');
+        $o_menu_navigation->addMenuItemFromSection('history', 'History', t('History'));
+        $o_menu_navigation->addMenuItemFromSection('about', 'About', t('About us'));
+        $o_menu_navigation->addMenuItemFromSection('contact', 'Contact', t('Contact'));
+        $o_menu_navigation->addMenuItemFromSection('blog', 'Blog', t('Blog'));
         $st_menu_links = $o_menu_navigation->getMenuItemsAsLinks();
 
         $s_menus = implode(' ', $st_menu_links);
@@ -82,12 +84,34 @@ abstract class CommonRequests
 
         Translations::loadTranslations('common_menu');
 
-        Section::registerSection('about', $s_prefix.t('seo_url_about_us'), 'About', 'Index');
-        //Section::registerSection('contact', $s_prefix.'contact');
         //Section::registerSection('donate', $s_prefix.'donate');
         Section::registerSection('install', $s_prefix.t('seo_url_install'), 'Install', 'Index');
         Section::registerSection('download', $s_prefix.t('seo_url_download'), 'Download', 'Index');
-        Section::registerSection('manual', $s_prefix.'manual');
+        Section::registerSection('manual', $s_prefix.'manual', 'Manual', 'Index');
+        Section::registerSection('history', $s_prefix.t('seo_url_history'), 'History', 'Index');
+        Section::registerSection('about', $s_prefix.t('seo_url_about_us'), 'About', 'Index');
+        Section::registerSection('contact', $s_prefix.t('seo_url_contact'), 'Contact', 'Index');
+        Section::registerSection('blog', t('seo_url_blog'), 'Blog');
     }
+
+    // Use this method to log to the database the request
+    public static function logRequest($o_db = null) {
+
+        $s_visitor_ip    = \CataloniaFramework\Requests::getClientIp(\CataloniaFramework\Requests::MODE_IP_REQUEST_CLIENT);
+
+        $s_referer       = \CataloniaFramework\Requests::getHttpReferer();
+
+        $s_user_agent    = \CataloniaFramework\Requests::getUserAgent();
+
+        $s_url_requested = \CataloniaFramework\Requests::getRequestedUrl();
+
+        $st_results = $o_db->queryWrite('INSERT INTO
+                                                    `visits`
+                                                    (`s_visit_datetime`, `s_visit_ip`, `s_referer`, `s_visit_user_agent`, `s_visit_url_requested`)
+                                              VALUES
+                                                    (NOW(), \''.$s_visitor_ip.'\', \''.$s_referer.'\', \''.$s_user_agent.'\', \''.$s_url_requested.'\');');
+
+    }
+
 
 }

@@ -1,13 +1,13 @@
 <?php
 
-define('FRAMEWORK_VERSION', '1.1.010');
+define('FRAMEWORK_VERSION', '1.1.014');
 define('CATALONIAFW_VERSION', 'v. '.FRAMEWORK_VERSION);
 define('CATALONIAFW_URL', 'http://www.cataloniaframework.com/');
 
 
 define('CHARSET','UTF-8');
 ini_set('default_charset', 'utf-8');
-setlocale(LC_ALL, 'es_ES.UTF8');
+setlocale(LC_ALL, 'en_US.UTF8');
 date_default_timezone_set('Europe/Andorra');
 
 set_time_limit(40);
@@ -16,7 +16,8 @@ set_time_limit(40);
 define('FIRST_TIME', false);
 if (FIRST_TIME == true) {
     require '../views/errors/catfw_firsttime.php';
-    Core::end();
+    // Core is not loaded, just exit
+    exit();
 }
 
 define('DEVELOPMENT', 'DEVELOPMENT');
@@ -45,9 +46,12 @@ define('CLASSES_ROOT', $st_server_config['storage']['classes_root']);
 define('CONTROLLERS_ROOT', CATFW_ROOT.'controllers/');
 define('MODELS_ROOT', CATFW_ROOT.'models/');
 define('VIEWS_ROOT', CATFW_ROOT.'views/');
+define('LIB_ROOT', CATFW_ROOT.'lib/');
 define('CUSTOM_INIT_ROOT', CATFW_ROOT.'init/');
 define('TRANSLATIONS_ROOT', CATFW_ROOT.'translations/');
 define('CACHE_ROOT', CATFW_ROOT.'cache/');
+define('TMP_ROOT', $st_server_config['storage']['tmp']);
+define('NODE_NAME', $st_server_config['node']['name']);
 
 // To write errors if access to DB fails.
 define('LOG_SQL_FILE', LOGS_ROOT.'sql.log');

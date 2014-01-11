@@ -59,3 +59,7 @@ li.nav {margin:0;list-style:none;list-style-image:none;list-style-type:none;}
     width:      95%;
     clear:      both;
 }
+p.general_ok_msg { color: #22FF22; font-weight: bold;}
+p.general_error_msg { color: #FF2222; font-weight: bold;}
+/*#ok_msg {border-color:#006b94;border-style:solid;color:#66A6BF;position:relative;zoom:1; width:400px; height:50px; padding: 2px;}
+#error_msg {border-color:#006b94;border-style:solid;color:#66A6BF;position:relative;zoom:1; width:400px; height:50px; padding: 2px;}*/

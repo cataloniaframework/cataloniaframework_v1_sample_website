@@ -21,13 +21,13 @@ namespace CataloniaFramework;
 
 <h1>Contactar</h1>
 
-<p>Això és per a demostrar la funcionalitat de la classe Form</p>
+<p>Deixeu aquí el vostre missatge</p>
 <div id="error_msg">
     <?php
 
         // $st_view_vars is defined in getView and passed down
         $o_form = $st_view_vars['o_contact_form'];
-        $s_embed_javascript = $st_view_vars['s_embed_javascript'];
+        $s_embed_javascript = isset($st_view_vars['s_embed_javascript']) ? $st_view_vars['s_embed_javascript']: '';
         $s_error_msg = $st_view_vars['s_error_msg'];
         if (isset($st_view_vars['s_ok_msg'])) {
             $s_ok_msg = $st_view_vars['s_ok_msg'];

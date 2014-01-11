@@ -28,13 +28,17 @@ $s_manual_prefix = Section::getSectionURL('manual', true);
 </div>
 ||*||[HEAD_NAVIGATION_BLOCK]||*||
 <div class="body_page">
-<p>Documentació sobre el Framework</p>
+<h2>Documentació sobre el Framework</h2>
+El Framework proporciona molta informació en forma de comentaris al codi.<br />
+<br />
+    <a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_requirements'); ?>">Requeriments</a><br />
 <a href="<?php echo Section::getSectionURL('download', true); ?>">Descarregueu el Framework</a><br />
 <a href="<?php echo Section::getSectionURL('install', true); ?>">Instal·lació</a><br />
 <a href="<?php echo $s_manual_prefix; ?>v1/getting_started">Primeres passes</a><br />
 <a href="<?php echo $s_manual_prefix; ?>v1/directory_structure">Estructura de directoris</a><br />
 <a href="<?php echo $s_manual_prefix; ?>v1/bootstrap">Bootstrap i ordre de càrrega</a><br />
-Mecànica de les url<br />
+<a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_url_mechanics'); ?>">Mecànica de les url</a><br />
+<a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_cqlsi'); ?>">Cassandra CQLSÍ</a><br />
 <br />
 </div>
 <?php require 'index_footer.php'; ?>

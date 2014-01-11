@@ -3,10 +3,13 @@
  * Creator:      Carles Mateo
  * Date:         2013-02-07 12:53
  * Last Updater: Carles Mateo
- * Last Updated: 2013-09-15 17:36
+ * Last Updated: 2013-09-25 11:36
  * Filename:     bootstrap.php
  * Description:
  */
+
+require_once 'requests.class.php';  // For Multi-Development environments in development config
+use CataloniaFramework\Requests as Requests;
 
 require_once '../config/general.php';
 // Db is required in general
@@ -20,8 +23,6 @@ spl_autoload_register('catfw_autoload');
 
 require_once CATFW_CORE_ROOT.'strings.class.php';
 use CataloniaFramework\Strings as Strings;
-require_once CATFW_CORE_ROOT.'requests.class.php';
-use CataloniaFramework\Requests as Requests;
 require_once CATFW_CORE_ROOT.'section.class.php';
 use CataloniaFramework\Section as Section;
 require_once CATFW_CORE_ROOT.'core.class.php';
@@ -51,6 +52,12 @@ require_once CUSTOM_INIT_ROOT.'commonrequests.class.php';
 use CataloniaFramework\CommonRequests as CommonRequests;
 require_once CATFW_CORE_ROOT.'form.class.php';
 use CataloniaFramework\Form as Form;
+require_once CATFW_CORE_ROOT.'session.class.php';
+use CataloniaFramework\Session as Session;
+require_once CATFW_CORE_ROOT.'security.class.php';
+use CataloniaFramework\Security as Security;
+require_once CATFW_CORE_ROOT.'file.class.php';
+use CataloniaFramework\File as File;
 
 $s_user_language = LANGUAGE_DEFAULT;
 
@@ -72,7 +79,7 @@ if (Navigation::isURLCustom(REQUESTED_PATH) == true) {
     $s_action = 'CATFW_getCustomContent';
 
     if (!Core::loadController($s_controller)) {
-        echo getErrorView(Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND, Views::$s_ERROR_MESSAGES[Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND]);
+        echo getErrorView(Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND, Views::$st_ERROR_MESSAGES[Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND]);
         Core::end();
     }
 
@@ -161,7 +168,7 @@ if (Navigation::isURLCustom(REQUESTED_PATH) == true) {
     if (!Core::isValidName($s_controller) || !Core::isValidName($s_action) ||
         !Core::loadController($s_controller)) {
         // Invalid name of controller or action
-        echo getErrorView(Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND, Views::$s_ERROR_MESSAGES[Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND]);
+        echo getErrorView(Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND, Views::$st_ERROR_MESSAGES[Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND]);
         Core::end();
     }
 
@@ -174,7 +181,7 @@ if (Navigation::isURLCustom(REQUESTED_PATH) == true) {
 
     if (!method_exists($o_controller, $s_action)) {
         // Invalid name of controller or action
-        echo getErrorView(Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND, Views::$s_ERROR_MESSAGES[Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND]);
+        echo getErrorView(Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND, Views::$st_ERROR_MESSAGES[Views::ERROR_CONTROLLER_OR_ACTION_NOT_FOUND]);
         Core::end();
     }
 
@@ -194,3 +201,6 @@ for ($i_count=0; $i_count<=count($st_params); $i_count = $i_count+2) {
 
 // Load Additional custom content
 CommonRequests::registerUserVars($o_db);
+
+// Log the visit
+CommonRequests::logRequest($o_db);

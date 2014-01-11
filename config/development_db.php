@@ -15,7 +15,8 @@ $st_server_config['database'] = Array(	'read'  => Array(   'servers'   => Array(
                                                                                             'server_port'		=> '3306',
                                                                                             'username'			=> 'www_cataloniafw',
                                                                                             'password'			=> 'yourpassword',
-                                                                                            'database'			=> 'cataloniafw'
+                                                                                            'database'			=> 'cataloniafw',
+                                                                                            'client_encoding'   => 'utf8'
                                                                                             )
                                                                                 )
                                                         ),
@@ -25,7 +26,8 @@ $st_server_config['database'] = Array(	'read'  => Array(   'servers'   => Array(
                                                                                             'server_port'		=> '3306',
                                                                                             'username'			=> 'www_cataloniafw',
                                                                                             'password'			=> 'yourpassword',
-                                                                                            'database'			=> 'cataloniafw'
+                                                                                            'database'			=> 'cataloniafw',
+                                                                                            'client_encoding'   => 'utf8'
                                                                                             )
                                                                                 )
 

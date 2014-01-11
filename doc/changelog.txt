@@ -1,7 +1,41 @@
-ataloniaWeb Changelog
+CataloniaWeb Changelog
 ======================
 
-2012-12-23
+2014-01-07
+Carles Mateo:
+Moved visit logging to CommonRequests::logRequest
+
+Improved table visits
+
+Table new_install created
+
+Fixed a warning when there were no errors in Contact Form ($st_view_vars['s_embed_javascript'] did not exist)
+
+2014-01-06
+Carles Mateo:
+Updated core files to v.1.1.013
+
+2013-12-28
+Carles Mateo:
+Switch the web to work with mysqli driver (was still using mysql)
+
+Improvements in index.php and Db class (got the last Framework's version)
+
+Finished Contact Controller, Model, Views, Translations
+
+2013-12-26
+Carles Mateo:
+Added contact controller, contact model, ans saving messages.
+
+Requests::getClientIp
+
+Expand the manual and general improvements
+
+2013-12-25
+Carles Mateo:
+Bootstrap improved to support multi-development dirs
+
+2013-12-23
 Carles Mateo:
 Fixed a NOTICE when there was no HTTP_REFERER
 
@@ -19,3 +53,4 @@ Changed title from the app
 
 Added default parameters to Actions: $s_url = '', $st_params = Array(), $st_params_url = Array(), $o_db = null
 
+2013-09-15 v.1.1.010 Released

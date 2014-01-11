@@ -25,7 +25,12 @@ $st_server_config = array(  'environment' 	=> ENVIRONMENT,
                                                         'cache'             => '/home/carles/Escriptori/codi/cataloniaweb/cache/',
 												 		'tmp'               => '/tmp/',
 												 		'logs'              => '/var/logs/www/'
-												 	)
+												 	),
+                            'node'          => array(   'name'              => 'WEB01',
+                                                        'setcookie'         => true,
+                                                        'ttl_cookie'        => 0,
+                                                        'cookie_name'       => 'BALANCER_ID',
+                                                        'cookie_value'      => 'WEB01')
 						  );
 
 // Languages Supported
@@ -47,7 +52,7 @@ $p_st_languages = array ( 'ca' => array('default'   => true,
                                        ),
                         );
 
-define('LANGUAGE_DEFAULT', 'ca');
+define('LANGUAGE_DEFAULT', 'en');
 
 
 // If we log SQL Inserts to FILE. Normally for Debug.
