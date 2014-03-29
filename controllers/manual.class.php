@@ -41,6 +41,8 @@ class Manual extends ControllerBase {
             $s_view = $this->getView('manual/manual_v1_url_mechanics', $st_parameters, USER_LANGUAGE);
         } elseif (isset($st_params[1]) && isset($st_params[2]) && $st_params[1] == 'v1' && $st_params[2] == t('seo_section_cqlsi')) {
             $s_view = $this->getView('manual/manual_v1_db_cassandra_cqlsi', $st_parameters, USER_LANGUAGE);
+        } elseif (isset($st_params[1]) && isset($st_params[2]) && $st_params[1] == 'v1' && $st_params[2] == t('seo_section_sample_cron_cqlsi')) {
+            $s_view = $this->getView('manual/manual_v1_sample_cron_cqlsi', $st_parameters, USER_LANGUAGE);
         } else {
             $s_view = $this->getView('manual_index', $st_parameters, USER_LANGUAGE);
         }

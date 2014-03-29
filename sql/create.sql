@@ -40,3 +40,33 @@ CREATE TABLE `new_install` (
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
+
+CREATE TABLE `accounts` (
+  `account_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `account_company_name` VARCHAR(50) NOT NULL,
+  `account_email_created_with` VARCHAR(100) NOT NULL,
+  `account_datetime_created` DATETIME NOT NULL,
+  `account_datetime_last_modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`account_id`)
+)
+  COLLATE='utf8_general_ci'
+  ENGINE=InnoDB
+  AUTO_INCREMENT=1;
+
+CREATE TABLE `accounts_users` (
+  `accounts_users_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `accounts_id_fk` INT(10) UNSIGNED NOT NULL,
+  `accounts_users_email` VARCHAR(50) NOT NULL,
+  `accounts_users_password` VARCHAR(50) NOT NULL,
+  `accounts_users_name` VARCHAR(50) NOT NULL,
+  `accounts_users_surname1` VARCHAR(50) NOT NULL,
+  `accounts_users_surname2` VARCHAR(50) NOT NULL,
+  `accounts_users_lang` VARCHAR(2) NOT NULL DEFAULT 'en',
+  `accounts_users_active` VARCHAR(1) NOT NULL DEFAULT 'T',
+  `accounts_users_datetime_created` DATETIME NOT NULL,
+  `accounts_users_datetime_last_modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`accounts_users_id`)
+)
+  COLLATE='utf8_general_ci'
+  ENGINE=InnoDB
+  AUTO_INCREMENT=1;

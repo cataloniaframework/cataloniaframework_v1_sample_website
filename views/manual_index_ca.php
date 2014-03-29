@@ -39,6 +39,7 @@ El Framework proporciona molta informació en forma de comentaris al codi.<br />
 <a href="<?php echo $s_manual_prefix; ?>v1/bootstrap">Bootstrap i ordre de càrrega</a><br />
 <a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_url_mechanics'); ?>">Mecànica de les url</a><br />
 <a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_cqlsi'); ?>">Cassandra CQLSÍ</a><br />
+    <a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_sample_cron_cqlsi'); ?>">Codi d'un cron d'exemple que usa CQLSÍ per a guardar dades a Cassandra</a><br />
 <br />
 </div>
 <?php require 'index_footer.php'; ?>

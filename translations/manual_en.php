@@ -12,3 +12,4 @@
 $st_translations['seo_section_url_mechanics'] = 'url-mechanics';
 $st_translations['seo_section_requirements'] = 'requirements';
 $st_translations['seo_section_cqlsi'] = 'cassandra-cqlsi';
+$st_translations['seo_section_sample_cron_cqlsi'] = 'sample-cron-with-cassandra-cqlsi';

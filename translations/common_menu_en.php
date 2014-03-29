@@ -14,6 +14,7 @@ $st_translations['About us']   = 'About us';
 $st_translations['Contact']    = 'Contact';
 $st_translations['Install']    = 'Install';
 $st_translations['Download']   = 'Download';
+$st_translations['Download Virtual Machines']   = 'Download Virtual Machines';
 $st_translations['History']    = 'History';
 $st_translations['Blog']       = 'Blog';
 $st_translations['seo_url_home']     = '';
@@ -21,6 +22,15 @@ $st_translations['seo_url_about_us'] = 'about-us';
 $st_translations['seo_url_contact']  = 'contact';
 $st_translations['seo_url_install']  = 'install';
 $st_translations['seo_url_download'] = 'download';
+$st_translations['seo_url_downloadvm'] = 'download-virtual-images';
 $st_translations['seo_url_manual']   = 'manual';
-$st_translations['seo_url_history']   = 'history-of-the-framework';
-$st_translations['seo_url_blog']   = 'http://blog.cataloniaframework.com';
+$st_translations['seo_url_history']  = 'history-of-the-framework';
+$st_translations['seo_url_blog']     = 'http://blog.cataloniaframework.com';
+$st_translations['url_dashboard']    = 'dashboard';
+$st_translations['url_user_login']   = 'login';
+$st_translations['url_user_logout']  = 'logout';
+
+// Login Menu
+$st_translations['Login'] = 'Login';
+$st_translations['Logout'] = 'Logout';
+$st_translations['Register'] = 'Register';

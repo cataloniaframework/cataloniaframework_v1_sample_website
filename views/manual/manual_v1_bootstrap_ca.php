@@ -28,6 +28,7 @@ $s_manual_prefix = Section::getSectionURL('manual', true);
 </div>
 ||*||[HEAD_NAVIGATION_BLOCK]||*||
 <div class="body_page">
+<small>Darrera actualització: 2014-02-01</small>
 <h2>.htacess</h2>
 <p>Doneu-li un cop d'ull a l'arxiu .htaccess</p>
 <pre>RewriteEngine on
@@ -50,7 +51,6 @@ try {
     $i_start_time = microtime(true);
 
     require_once '../catfwcore/bootstrap.php';
-    require_once CUSTOM_INIT_ROOT.'bootstrap.php';
 
     if (Navigation::isURLCustom(REQUESTED_PATH)) {
         // custom url
@@ -89,13 +89,25 @@ Core::end();
 </pre>
 <h2>Ordre de càrrega</h2>
 Com veieu el primer a ser carregat és:<br />
-<pre>require_once '../catfwcore/bootstrap.php';
-require_once CUSTOM_INIT_ROOT.'bootstrap.php';</pre>
+<pre>require_once '../catfwcore/bootstrap.php';</pre>
 El primer que es carrega és el Bootstrap del Framework, aquest ho inicialitza tot, i llavors carrega:<br />
 <pre>init/commonrequests.class.php</pre>
 commonrequests.class.php és l'indret on el desenvolupador afegeix els seu propi codi personalitzat, que s'executa a cada petició http.<br />
+L'ordre de les crides és:<br />
+<ol>
+    <li>Bootstrap carrega tots els arxius del Core requerits</li>
+    <li>Les variables $s_params, $st_params i la constant REQUESTED_PATH són definides.</li>
+    <li>init/customprebootstrap.php és invocat</li>
+    <li>CommonRequests::initSession($o_db); és <br />
+    <li>CommonRequests::registerURLS(); per a definir URLs estàtiques</li>
+    <li>Constants com USER_LANGUAGE, CONTROLLER, ACTION són fixades, per a que puguin ser emprades arreu del codi</li>
+    <li>Els paràmeters són copiat en parells per a un fàcil ús a $st_params_url</li>
+    <li>CommonRequests::registerUserVars($o_db); és invocat</li>
+    <li>CommonRequests::logRequest($o_db); és invocat</li>
+    <li>init/custompostbootstrap.php és invocat</li>
+</ol>
 Després d'això, l' init/bootstrap.php és executat. Aquest és el Bootstrap del desenvolupador. Aquí el desenvolupador pot afegir <i>requires</i> per a les seves classes i arxius, llibreries de tercers, etc...<br />
-L'objectiu d' init/ directory és que el desenvolupador faci els seus canvis aquí, així quan el Catalonia Framework és actualitzat amb una nova versió, no hi haurà conflictes amb el codi del projecte del desenvolupador.<br />
+L'objectiu d' init/ directory és que el desenvolupador faci els seus canvis aquí, així quan el Catalonia Framework és actualitzat amb una nova versió, no hi haurà conflictes amb el codi del projecte del desenvolupador i el codi Core del Framework.<br />
 El Framework proporciona un autoload per a "lazy loading" les classes (quan es demanen si no s'havien carregat), així si una classe desconeguda és invocada el Framework intentarà carregar-la del directori classes/.<br />
 </pre>
 <br />

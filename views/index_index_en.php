@@ -23,7 +23,7 @@ namespace CataloniaFramework;
 Welcome to Catalonia Framework page.<br />
 Catalonia Framework is a PHP Open Source Framework.<br />
 <br />
-Last version of Catalonia Framework is v.1.1.014 from 2014-01-11.<br />
+Last version of Catalonia Framework is v.1.1.015 from 2014-01-29.<br />
 <br />
 Features at a glance:<br />
 <ul>
@@ -49,7 +49,7 @@ Features at a glance:<br />
     <li>Native support for CDN statics</li>
     <li>Compatible with Linux, Mac, Unix, and windows Servers</li>
     <li>Custom Exceptions and Custom Error Views</li>
-    <li>Integrated Template System for reusable multi-language Views (but you can use others like Smarty)</li>
+    <li>Integrated Template System for reusable multi-language Views 100% PHP (but you can use others like Smarty)</li>
     <li>Many classes are glueless: can be used without the rest of the Framework</li>
 </ul>
 <br />

@@ -28,6 +28,7 @@ $s_manual_prefix = Section::getSectionURL('manual', true);
 </div>
 ||*||[HEAD_NAVIGATION_BLOCK]||*||
 <div class="body_page">
+<small>Last updated: 2014-02-01</small>
 <h2>.htacess</h2>
 <p>Take a look at the .htaccess file</p>
 <pre>RewriteEngine on
@@ -50,7 +51,6 @@ try {
     $i_start_time = microtime(true);
 
     require_once '../catfwcore/bootstrap.php';
-    require_once CUSTOM_INIT_ROOT.'bootstrap.php';
 
     if (Navigation::isURLCustom(REQUESTED_PATH)) {
         // custom url
@@ -91,11 +91,27 @@ Core::end();
 As you've seen the first to be loaded is:<br />
 <pre>require_once '../catfwcore/bootstrap.php';
 require_once CUSTOM_INIT_ROOT.'bootstrap.php';</pre>
-The first thing to be loaded is the Framework's Bootstrap, it initialises everything, and then loads:<br />
+The first thing to be loaded is the Framework's Bootstrap, it loads all the core classes needed, at a early stage it loads:
+<pre>init/customprebootstrap.php</pre>
+This is a custom bootstrap from the developer that loads at the very beginning part of the boostraping.<br />
+The goal of this file is to provide a place to define Classes, database objects, constants, third party libraries, require additional files... that will be needed later by the custom code.<br />
+The bootrap initialises everything, and then loads:<br />
 <pre>init/commonrequests.class.php</pre>
-commonrequests.class.php is the place where the developer adds its his custom code to be run in every requests.<br />
-After that, the init/bootstrap.php is executed. This is the developer's Bootstrap. Here the developer can add requires for his classes, third party libraries, etc...<br />
-The purpose of the init/ directory is that the developer does his changes here, and so when the Catalonia Framework is updated, there are no conflicts with the existing developer's code projects.<br />
+commonrequests.class.php is the place where the developer adds its custom code to be run in every requests.<br />
+The order of calls is:<br />
+<ol>
+    <li>Bootstrap loads all the required core files</li>
+    <li>Variables $s_params, $st_params and constant REQUESTED_PATH are defined.</li>
+    <li>init/customprebootstrap.php is invoked</li>
+    <li>CommonRequests::initSession($o_db);<br />
+    <li>CommonRequests::registerURLS(); to define user custom hardcoded URLs</li>
+    <li>Constants like USER_LANGUAGE, CONTROLLER, ACTION are set, so they can be readed allover the code</li>
+    <li>Parameters are copied into pairs for more easy use in $st_params_url</li>
+    <li>CommonRequests::registerUserVars($o_db); is invoked</li>
+    <li>CommonRequests::logRequest($o_db); is invoked</li>
+    <li>init/custompostbootstrap.php is invoked</li>
+</ol>
+The purpose of the init/ directory is that the developer does his changes here, and so when the Catalonia Framework is updated, there are no conflicts with the existing developer's code projects and Core files.<br />
 The framework provides an autoload for lazyloading classes, so if an unknown Class is invoked it will try to load from the classes/ directory.<br />
 </pre>
 <br />

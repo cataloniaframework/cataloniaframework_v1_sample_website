@@ -39,6 +39,7 @@ The Framework provides a lot of documentation in form of remarks in the code.<br
 <a href="<?php echo $s_manual_prefix; ?>v1/bootstrap">Bootstrap and loading order</a><br />
 <a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_url_mechanics'); ?>">Url mechanics</a><br />
 <a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_cqlsi'); ?>">Cassandra CQLSÍ</a><br />
+<a href="<?php echo $s_manual_prefix; ?>v1/<?php echo t('seo_section_sample_cron_cqlsi'); ?>">Writing a sample cron that uses CQLSÍ to store data in Cassandra</a><br />
 <br />
 </div>
 <?php require 'index_footer.php'; ?>

@@ -1,6 +1,56 @@
 CataloniaWeb Changelog
 ======================
 
+2013-03-27
+Added graphic for stats from today in Dashboard
+
+Added visits to the website from today
+
+2013-03-25
+Increased messages to 25
+
+2013-02-03
+Carles Mateo
+Added detected Ip to the Dashboard
+
+2013-02-02
+Carles Mateo
+Added number of visits yesterday, and past yesterday to Dashboard
+
+2014-02-01
+Carles Mateo
+Dashboard and full login working
+
+Added login and logout links
+
+Added USER_NAME to session
+
+Added USER_NAME when logged, up to the right
+
+Added View of last 2 contact messages in the dashboard after login
+
+2014-01-29
+Carles Mateo:
+Added cron server_stats.php that tracks the CPU used every 5 minutes
+
+2014-01-28
+Carles Mateo:
+Updated Documentation
+
+2014-01-27
+Carles Mateo:
+Updated Documentation
+
+2014-01-26
+Carles Mateo:
+Added Login controllers, models, Data Object formlogin
+
+Added USER_ID, USER_ACCOUNT, USER_ROLE to Session as constants.
+
+Added dashboard, for login in only
+
+------------------------------------------------------------------
+
 2014-01-07
 Carles Mateo:
 Moved visit logging to CommonRequests::logRequest

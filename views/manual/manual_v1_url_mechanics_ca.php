@@ -93,7 +93,7 @@ Array( 'order' => 'asc',
     <p>A la carpeta translations/ disposeu d'arxius de traducció i la clau (key) 'seo_url_download'. A cada arxiu d'idioma disposeu d'un valor per al llenguatge.</p>
     <p>Les Sections poden ser associades als objectes Menu per a crear menus, com a la DemoApp.</p>
 <br />
-<a href="<?php echo $s_manual_prefix; ?>">Back to Main Manual page</a><br />
+<a href="<?php echo $s_manual_prefix; ?>">Tornar a la plana principal del Manual</a><br />
 
 </div>
 <?php require VIEWS_ROOT.'index_footer.php'; ?>

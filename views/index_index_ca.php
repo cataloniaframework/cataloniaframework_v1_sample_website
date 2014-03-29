@@ -22,7 +22,7 @@ namespace CataloniaFramework;
 Benvinguts a la pàgina web de Catalonia Framework.<br />
 Catalonia Framework és un marc de treball PHP, Programari Lliure.<br/>
 <br />
-La darrera versió de Catalonia Framework és la v.1.1.014 del 2014-01-11.<br />
+La darrera versió de Catalonia Framework és la v.1.1.015 del 2014-01-29.<br />
 <br />
 Resum de funcionalitats:<br />
 <ul>
@@ -48,7 +48,7 @@ Resum de funcionalitats:<br />
     <li>Suport nadiu per a CDN, continguts estàtics</li>
     <li>Compatible amb servidors Linux, Mac, Unix, i windows</li>
     <li>Custom Exceptions i Views d'error customitzades</li>
-    <li>Sistema de Templates integrat per a Views multi-llenguatge reusables (però podeu fer-ne servir d'altres com Smarty)</li>
+    <li>Sistema de Templates integrat per a Views multi-llenguatge reusables 100% PHP (però podeu fer-ne servir d'altres com Smarty)</li>
     <li>Moltes classes són glueless, les podeu fer servir sense la resta del Framework</li>
 </ul>
 <br />

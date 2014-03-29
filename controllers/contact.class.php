@@ -39,7 +39,7 @@ class Contact extends ControllerBase {
                 $s_error_msg = t('Error fix the fields');
             } else {
                 // All the Data is Ok
-                if (Core::loadModel('contactmodel')) {
+                if (Core::loadModel('ContactModel')) {
                     // Model loaded Ok
 
                     $st_form_params = $o_contact_form->getParamsValidated(Form::MODE_EXPECTED_VALUES, true);

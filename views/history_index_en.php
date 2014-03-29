@@ -84,7 +84,7 @@ namespace CataloniaFramework;
     Developers will keep working in our Development repo and code will be released to the Stable git repo when is ready.<br />
     If someone is working local with its computer building a project from the version 1.1.010 and 1.1.011 is released, he only will have to pull and merge the few customized files. Easy. No drama.<br />
     <br />
-    I'm still integrating functionality from my libraries to the Framework and a the same time advancing wiht the development of the new needs.<br />
+    I'm still integrating functionality from my libraries to the Framework and at the same time advancing wiht the development of the new needs.<br />
     <p/>
     <img src="/img/manual/cataloniaframework-working-on-bars-with-wifi.png" alt="Some code has been developed in bars :)" title="Some code has been developed in bars :)" />
 <br />
