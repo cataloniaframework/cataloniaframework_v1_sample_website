@@ -1,19 +1,22 @@
 CataloniaWeb Changelog
 ======================
 
-2013-03-27
+2015-08-23
+Updated main vied to show support for PHP 7
+
+2014-03-27
 Added graphic for stats from today in Dashboard
 
 Added visits to the website from today
 
-2013-03-25
+2014-03-25
 Increased messages to 25
 
-2013-02-03
+2014-02-03
 Carles Mateo
 Added detected Ip to the Dashboard
 
-2013-02-02
+2014-02-02
 Carles Mateo
 Added number of visits yesterday, and past yesterday to Dashboard
 

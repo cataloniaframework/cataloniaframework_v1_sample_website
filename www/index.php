@@ -32,6 +32,12 @@ try {
     $i_finish_time = microtime(true);
     $i_execution_time = $i_finish_time-$i_start_time;
     Views::addSystemVar('EXECUTION_TIME', $i_execution_time, Views::VAR_ACTION_REPLACE);
+
+    $i_memory_peak_usage_mb = memory_get_peak_usage(true)/1048576;
+    $i_memory_usage_mb = memory_get_usage(true)/1048576;
+    Views::addSystemVar('MEMORY_PEAK_USAGE_MB', $i_memory_peak_usage_mb, Views::VAR_ACTION_REPLACE);
+    Views::addSystemVar('MEMORY_USAGE_MB', $i_memory_usage_mb, Views::VAR_ACTION_REPLACE);
+
     // TODO: SetSystemvar finish time
     Views::replaceSystemVars($s_html);
 

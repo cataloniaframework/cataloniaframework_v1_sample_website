@@ -11,7 +11,8 @@
 // This file is mainly for translators
 $st_translations['seconds'] = 'seconds';
 $st_translations['Time']    = 'Time';
-$st_translations['Vars used in these templates']    = 'Vars used in these templates';
+$st_translations['Vars used in these templates']    = 'Vars used in Templates';
 $st_translations['Total Var replacements']  = 'Total replaced';
 $st_translations['Execution time'] = 'Execution time';
 $st_translations['Cached controller'] = 'Cached controller';
+$st_translations['Memory usage'] = 'Memory usage';

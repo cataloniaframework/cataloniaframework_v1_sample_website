@@ -15,3 +15,4 @@ $st_translations['Vars used in these templates']    = 'Variables emprades a les 
 $st_translations['Total Var replacements']  = 'Total reemplaçades';
 $st_translations['Execution time'] = 'Temps d\'execució';
 $st_translations['Cached controller'] = 'Controller catxejat';
+$st_translations['Memory usage'] = 'Ús de memòria';

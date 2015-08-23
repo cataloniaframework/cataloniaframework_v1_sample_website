@@ -4,7 +4,7 @@
  * Creator:      Carles Mateo
  * Date Created: 2013-02-11 00:15
  * Last Updater: Carles Mateo
- * Last Updated: 2014-01-01 20:25
+ * Last Updated: 2015-08-23 14:50
  * Filename:
  * Description:  View for index Controller index Action, language English
  */
@@ -27,7 +27,7 @@ Last version of Catalonia Framework is v.1.1.015 from 2014-01-29.<br />
 <br />
 Features at a glance:<br />
 <ul>
-    <li>Compatible with PHP 5.3, 5.4, 5.5</li>
+    <li>Compatible with PHP 7, 5.6, 5.5, 5.4, 5.3 and Facebook HHVM</li>
     <li>MVC</li>
     <li>Built in cache, at Controller level, possible override by Action</li>
     <li>Dynamic system that allows infinite live sections under cached contents, customized on-the-fly</li>
