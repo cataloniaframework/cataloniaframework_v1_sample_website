@@ -80,7 +80,7 @@ if (ENVIRONMENT == PRODUCTION) {
 if (ENVIRONMENT == PREPRODUCTION) {
 	require_once 'preproduction_db.php';
 }
-if (ENVIRONMENT == DOCKER_NO_DB) {
+if (ENVIRONMENT == DOCKER) {
 	require_once 'docker_no_db.php';
 }
 
