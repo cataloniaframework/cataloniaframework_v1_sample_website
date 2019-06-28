@@ -19,6 +19,7 @@ class Db
     const TYPE_CONNECTION_MYSQLI          = 'mysqli';
     const TYPE_CONNECTION_POSTGRE         = 'pg';
     const TYPE_CONNECTION_CASSANDRA_CQLSI = 'cassandra';  // NoSQL Cassandra
+    const TYPE_CONNECTION_DUMMY           = 'dummy';      // We will not use a Db really
 
     const SERVER_LOCALHOST = 'localhost';
     const CONNECTION_METHOD_UNIX_SOCKETS    = 'unix_sockets';
