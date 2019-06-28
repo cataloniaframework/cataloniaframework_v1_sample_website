@@ -24,6 +24,11 @@ define('DEVELOPMENT', 'DEVELOPMENT');
 define('PRODUCTION', 'PRODUCTION');
 define('PREPRODUCTION', 'PREPRODUCTION');
 
+define('DOCKER', 'DOCKER');
+
+// Change this line for Production
+define('ENVIRONMENT', DOCKER);
+
 // Change this line for Production
 define('ENVIRONMENT', DEVELOPMENT);
 
@@ -36,6 +41,10 @@ if (ENVIRONMENT == PRODUCTION) {
 if (ENVIRONMENT == PREPRODUCTION) {
 	require_once 'preproduction.php';
 }
+if (ENVIRONMENT == DOCKER) {
+	require_once 'docker.php';
+}
+
 
 // Define a prefix for all the includes
 define('WEB_ROOT', $st_server_config['storage']['web_root']);
@@ -73,6 +82,9 @@ if (ENVIRONMENT == PRODUCTION) {
 }
 if (ENVIRONMENT == PREPRODUCTION) {
 	require_once 'preproduction_db.php';
+}
+if (ENVIRONMENT == DOCKER_NO_DB) {
+	require_once 'docker_no_db.php';
 }
 
 $st_array_navigation = Array();
