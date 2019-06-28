@@ -29,9 +29,6 @@ define('DOCKER', 'DOCKER');
 // Change this line for Production
 define('ENVIRONMENT', DOCKER);
 
-// Change this line for Production
-define('ENVIRONMENT', DEVELOPMENT);
-
 if (ENVIRONMENT == DEVELOPMENT) {
 	require_once 'development.php';
 }
