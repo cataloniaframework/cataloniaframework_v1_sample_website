@@ -81,7 +81,7 @@ if (ENVIRONMENT == PREPRODUCTION) {
 	require_once 'preproduction_db.php';
 }
 if (ENVIRONMENT == DOCKER) {
-	require_once 'docker_no_db.php';
+	require_once 'docker_db.php';
 }
 
 $st_array_navigation = Array();
