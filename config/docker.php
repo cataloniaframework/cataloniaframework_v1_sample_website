@@ -19,12 +19,12 @@ $st_server_config = array(  'environment' 	=> ENVIRONMENT,
 														'videos' => array(	'http'  => 'http://video.cataloniaframework.com/',
 																			'https' => 'https://video.cataloniaframework.com/')
 													),
-							'storage'		=> array(	'web_root'          => '/www/www.cataloniaframework.com/cataloniaweb/www/',
-                                                        'catfw_root'        => '/www/www.cataloniaframework.com/cataloniaweb/',
-                                                        'classes_root'      => '/www/www.cataloniaframework.com/cataloniaweb/classes/',
-                                                        'cache'             => '/www/www.cataloniaframework.com/cataloniaweb/cache/',
+							'storage'		=> array(	'web_root'          => '/www/www.cataloniaframework.com/www/',
+                                                        'catfw_root'        => '/www/www.cataloniaframework.com/',
+                                                        'classes_root'      => '/www/www.cataloniaframework.com/classes/',
+                                                        'cache'             => '/www/www.cataloniaframework.com/cache/',
 												 		'tmp'               => '/tmp/',
-												 		'logs'              => '/var/logs/www/'
+												 		'logs'              => '/var/log/apache2/'
 												 	),
                             'node'          => array(   'name'              => 'WEB01',
                                                         'setcookie'         => true,
